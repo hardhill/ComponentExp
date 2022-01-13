@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:svg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms" xmlns:local="clr-namespace:ComponentExp.Controls"
+             x:Class="ComponentExp.Controls.Selector"
+             >
+    <StackLayout>
+    <StackLayout Orientation="Horizontal" Margin="10,0,10,0">
+
+        <Frame CornerRadius="50" Padding="5,10" HasShadow="False" BackgroundColor="#82CCFF" x:Name="picLandmark">
+			<Frame.GestureRecognizers>
+                <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="picLandmarkTapped"/>
+            </Frame.GestureRecognizers>
+            <svg:SvgCachedImage WidthRequest="32" HeightRequest="32" Source="landmarkwt.svg"/>
+        </Frame>
+        <Frame CornerRadius="50" Padding="5,10" x:Name="picCamping">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="picCampingTapped"/>
+            </Frame.GestureRecognizers>
+            <svg:SvgCachedImage WidthRequest="32" HeightRequest="32" Source="shashlyk.svg" />
+        </Frame>
+        <Frame CornerRadius="50" Padding="5,10" x:Name="picBeauty">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="picBeautyTapped"/>
+            </Frame.GestureRecognizers>
+            <svg:SvgCachedImage WidthRequest="32" HeightRequest="32" Source="landmarkwt.svg"/>
+        </Frame>
+        <Frame CornerRadius="50" Padding="5,10" x:Name="picPoint">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="picPointTapped"/>
+            </Frame.GestureRecognizers>
+            <svg:SvgCachedImage WidthRequest="32" HeightRequest="32" Source="photo.svg"/>
+        </Frame>
+        <Frame CornerRadius="50" Padding="5,10" x:Name="picTrash">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="picTrashTapped"/>
+            </Frame.GestureRecognizers>
+            <svg:SvgCachedImage WidthRequest="32" HeightRequest="32" Source="nature.svg"/>
+        </Frame>
+        <Frame CornerRadius="50" Padding="5,10" x:Name="picSport">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="picSportTapped"/>
+            </Frame.GestureRecognizers>
+            <svg:SvgCachedImage WidthRequest="32" HeightRequest="32"  Source="watch.svg"/>
+        </Frame>
+        <StackLayout HorizontalOptions="EndAndExpand" Spacing="0">
+            <Label Text="Private" TextColor="Silver" FontSize="Small"/>
+            <Switch x:Name="swPrivate" IsToggled="False" PropertyChanged="Switch_PropertyChanged"/>
+        </StackLayout>
+    </StackLayout>
+        <Label x:Name="txtInfo" Text="Lendmark" Margin="10,0"/>
+    </StackLayout>
+</ContentView>

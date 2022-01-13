@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ComponentExp.MainPage"
+             xmlns:local="clr-namespace:ComponentExp.Controls">
+
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="Component demo" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+        
+        <local:Selector SelectedIndex="2" SelectedChanged="Selector_SelectedChanged_1" IsPrivateChanged="Selector_IsPrivateChanged"/>
+    </StackLayout>
+
+</ContentPage>
