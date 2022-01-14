@@ -15,8 +15,9 @@ namespace ComponentExp.Controls
         public Selector()
         {
             InitializeComponent();
-            
         }
+
+        private const string HexSelectColor = "#82CCFF";
         public static readonly BindableProperty SelectedIndexProperty = BindableProperty.Create(nameof(SelectedIndex), typeof(int), typeof(Selector), defaultValue:0);
         public int SelectedIndex 
         { get{
@@ -35,62 +36,62 @@ namespace ComponentExp.Controls
         public delegate void IsPrivateDelegate(object sender, bool share);
         public event IsPrivateDelegate IsPrivateChanged;
 
-        private void picLandmarkTapped(object sender, EventArgs e)
+        private void PicLandmarkTapped(object sender, EventArgs e)
         {
-            resetColorBackground();
-            picLandmark.BackgroundColor = Color.FromHex("#82CCFF");
+            ResetColorBackground();
+            picLandmark.BackgroundColor = Color.FromHex(HexSelectColor);
             picLandmark.HasShadow = false;
             txtInfo.Text = "Landmark";
             SelectedIndex = 0;
             SelectedChanged?.Invoke(this, SelectedIndex);
         }
-        private void picCampingTapped(object sender, EventArgs e)
+        private void PicCampingTapped(object sender, EventArgs e)
         {
-            resetColorBackground();
-            picCamping.BackgroundColor = Color.FromHex("#82CCFF");
+            ResetColorBackground();
+            picCamping.BackgroundColor = Color.FromHex(HexSelectColor);
             picCamping.HasShadow = false;
             txtInfo.Text = "Camping";
             SelectedIndex = 1;
             SelectedChanged?.Invoke(this, SelectedIndex);
         }
-        private void picBeautyTapped(object sender, EventArgs e)
+        private void PicBeautyTapped(object sender, EventArgs e)
         {
-            resetColorBackground();
-            picBeauty.BackgroundColor = Color.FromHex("#82CCFF");
+            ResetColorBackground();
+            picBeauty.BackgroundColor = Color.FromHex(HexSelectColor);
             picBeauty.HasShadow = false;
             txtInfo.Text = "Beauty Place";
             SelectedIndex = 2;
             SelectedChanged?.Invoke(this, SelectedIndex);
         }
-        private void picPointTapped(object sender, EventArgs e)
+        private void PicPointTapped(object sender, EventArgs e)
         {
-            resetColorBackground();
-            picPoint.BackgroundColor = Color.FromHex("#82CCFF");
+            ResetColorBackground();
+            picPoint.BackgroundColor = Color.FromHex(HexSelectColor);
             picPoint.HasShadow = false;
             txtInfo.Text = "Point of Interest";
             SelectedIndex = 3;
             SelectedChanged?.Invoke(this, SelectedIndex);
         }
-        private void picTrashTapped(object sender, EventArgs e)
+        private void PicTrashTapped(object sender, EventArgs e)
         {
-            resetColorBackground();
-            picTrash.BackgroundColor = Color.FromHex("#82CCFF");
+            ResetColorBackground();
+            picTrash.BackgroundColor = Color.FromHex(HexSelectColor);
             picTrash.HasShadow = false;
             txtInfo.Text = "Trash";
             SelectedIndex = 4;
             SelectedChanged?.Invoke(this, SelectedIndex);
         }
-        private void picSportTapped(object sender, EventArgs e)
+        private void PicSportTapped(object sender, EventArgs e)
         {
-            resetColorBackground();
-            picSport.BackgroundColor = Color.FromHex("#82CCFF");
+            ResetColorBackground();
+            picSport.BackgroundColor = Color.FromHex(HexSelectColor);
             picSport.HasShadow = false;
             txtInfo.Text = "Sport place";
             SelectedIndex = 5;
             SelectedChanged?.Invoke(this, SelectedIndex);
         }
 
-        private void resetColorBackground()
+        private void ResetColorBackground()
         {
             picLandmark.BackgroundColor = Color.White;
             picCamping.BackgroundColor = Color.White;

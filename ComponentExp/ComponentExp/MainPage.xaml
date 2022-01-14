@@ -9,7 +9,7 @@
             <Label Text="Component demo" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
         </Frame>
         
-        <local:Selector SelectedIndex="2" SelectedChanged="Selector_SelectedChanged_1" IsPrivateChanged="Selector_IsPrivateChanged"/>
+        <local:Selector SelectedIndex="2" SelectedChanged="Selector_SelectedChanged" IsPrivateChanged="Selector_IsPrivateChanged"/>
     </StackLayout>
 
 </ContentPage>

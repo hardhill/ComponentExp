@@ -17,7 +17,7 @@ namespace ComponentExp
 
         
 
-        private void Selector_SelectedChanged_1(object sender, int index)
+        private void Selector_SelectedChanged(object sender, int index)
         {
             Console.WriteLine($"Selected {index}");
         }
