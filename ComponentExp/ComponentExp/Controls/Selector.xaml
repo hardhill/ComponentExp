@@ -7,37 +7,37 @@
     <StackLayout>
     <StackLayout Orientation="Horizontal" Margin="10,0,10,0">
 
-        <Frame CornerRadius="50" Padding="5,10" HasShadow="False" BackgroundColor="#82CCFF" x:Name="picLandmark">
+        <Frame CornerRadius="50" Padding="7,7" HasShadow="False" BackgroundColor="#82CCFF" x:Name="picLandmark">
 			<Frame.GestureRecognizers>
                 <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="PicLandmarkTapped"/>
             </Frame.GestureRecognizers>
             <svg:SvgCachedImage WidthRequest="32" HeightRequest="32" Source="landmarkwt.svg"/>
         </Frame>
-        <Frame CornerRadius="50" Padding="5,10" x:Name="picCamping">
+        <Frame CornerRadius="50" Padding="7,7" x:Name="picCamping">
             <Frame.GestureRecognizers>
                 <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="PicCampingTapped"/>
             </Frame.GestureRecognizers>
             <svg:SvgCachedImage WidthRequest="32" HeightRequest="32" Source="shashlyk.svg" />
         </Frame>
-        <Frame CornerRadius="50" Padding="5,10" x:Name="picBeauty">
+        <Frame CornerRadius="50" Padding="7,7" x:Name="picBeauty">
             <Frame.GestureRecognizers>
                 <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="PicBeautyTapped"/>
             </Frame.GestureRecognizers>
-            <svg:SvgCachedImage WidthRequest="32" HeightRequest="32" Source="landmarkwt.svg"/>
+            <svg:SvgCachedImage WidthRequest="32" HeightRequest="32" Source="nature.svg"/>
         </Frame>
-        <Frame CornerRadius="50" Padding="5,10" x:Name="picPoint">
+        <Frame CornerRadius="50" Padding="7,7" x:Name="picPoint">
             <Frame.GestureRecognizers>
                 <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="PicPointTapped"/>
             </Frame.GestureRecognizers>
             <svg:SvgCachedImage WidthRequest="32" HeightRequest="32" Source="photo.svg"/>
         </Frame>
-        <Frame CornerRadius="50" Padding="5,10" x:Name="picTrash">
+        <Frame CornerRadius="50" Padding="7,7" x:Name="picTrash">
             <Frame.GestureRecognizers>
                 <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="PicTrashTapped"/>
             </Frame.GestureRecognizers>
-            <svg:SvgCachedImage WidthRequest="32" HeightRequest="32" Source="nature.svg"/>
+            <svg:SvgCachedImage WidthRequest="32" HeightRequest="32" Source="pollution.svg"/>
         </Frame>
-        <Frame CornerRadius="50" Padding="5,10" x:Name="picSport">
+        <Frame CornerRadius="50" Padding="7,7" x:Name="picSport">
             <Frame.GestureRecognizers>
                 <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="PicSportTapped"/>
             </Frame.GestureRecognizers>

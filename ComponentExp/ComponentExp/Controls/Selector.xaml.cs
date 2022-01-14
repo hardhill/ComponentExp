@@ -12,13 +12,47 @@ namespace ComponentExp.Controls
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Selector : ContentView
     {
+        public delegate void SelectorDelegate(object sender,  int index);
+        public delegate void IsPrivateDelegate(object sender, bool share);
         public Selector()
         {
             InitializeComponent();
         }
 
         private const string HexSelectColor = "#82CCFF";
-        public static readonly BindableProperty SelectedIndexProperty = BindableProperty.Create(nameof(SelectedIndex), typeof(int), typeof(Selector), defaultValue:0);
+        public static readonly BindableProperty SelectedIndexProperty = BindableProperty.Create(nameof(SelectedIndex),
+            typeof(int), 
+            typeof(Selector),defaultBindingMode:BindingMode.TwoWay,propertyChanged: TapOnFramePropertyChanged ,defaultValue:0);
+
+        private static void TapOnFramePropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var control = (Selector)bindable;
+            if (control != null)
+            {
+                switch ((int)newValue)
+                {
+                    case  1  :
+                        control.PicCampingTapped(control, null);
+                        break;
+                    case 2:
+                        control.PicBeautyTapped(control, null);
+                        break;
+                    case 3:
+                        control.PicPointTapped(control, null);
+                        break;
+                    case 4:
+                        control.PicTrashTapped(control, null);
+                        break;
+                    case 5:
+                        control.PicSportTapped(control, null);
+                        break;
+                        default:
+                        control.PicLandmarkTapped(control,null);
+                        break;
+                }
+            }
+        }
+
         public int SelectedIndex 
         { get{
                 return (int)GetValue(SelectedIndexProperty);
@@ -27,13 +61,29 @@ namespace ComponentExp.Controls
                 SetValue(SelectedIndexProperty, value);       
             } 
         }
-        public delegate void SelectorDelegate(object sender,  int index);
+        
         public event SelectorDelegate SelectedChanged;
 
+
+
         //=========================================================================
-        public bool IsPrivate { get { return (bool)GetValue(IsPrivateProperty); } set { SetValue(IsPrivateProperty, value); } }
-        public static readonly BindableProperty IsPrivateProperty = BindableProperty.Create(nameof(IsPrivate), typeof(bool), typeof(Selector), defaultValue:false);
-        public delegate void IsPrivateDelegate(object sender, bool share);
+        public static readonly BindableProperty IsPrivateProperty = BindableProperty.Create(nameof(IsPrivate), typeof(bool), typeof(Selector),defaultBindingMode:BindingMode.TwoWay, defaultValue: false,propertyChanged:IsSwitchPropertyChanged);
+
+        private static void IsSwitchPropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var control = (Selector)bindable;
+            control.swPrivate.IsToggled = (bool)newValue;
+        }
+
+        public bool IsPrivate { 
+            get { 
+                return (bool)GetValue(IsPrivateProperty); 
+            } 
+            set { 
+                SetValue(IsPrivateProperty, value); 
+            } 
+        }
+        
         public event IsPrivateDelegate IsPrivateChanged;
 
         private void PicLandmarkTapped(object sender, EventArgs e)
@@ -77,7 +127,7 @@ namespace ComponentExp.Controls
             ResetColorBackground();
             picTrash.BackgroundColor = Color.FromHex(HexSelectColor);
             picTrash.HasShadow = false;
-            txtInfo.Text = "Trash";
+            txtInfo.Text = "Pollution";
             SelectedIndex = 4;
             SelectedChanged?.Invoke(this, SelectedIndex);
         }

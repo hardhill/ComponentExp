@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ComponentExp.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -10,9 +11,14 @@ namespace ComponentExp
 {
     public partial class MainPage : ContentPage
     {
+        public SimpleData simpleData { get; set; }
         public MainPage()
         {
             InitializeComponent();
+            simpleData = new SimpleData();
+            simpleData.CategoryId = 4;
+            simpleData.IsPrivate = true;
+            BindingContext = simpleData;
         }
 
         
